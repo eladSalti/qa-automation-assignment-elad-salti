@@ -1,0 +1,17 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","59","test_sort_products_by_price_low_to_high[chromium]","tests.ui","Thu May 28 12:53:48 UTC 2026","passed","Thu May 28 12:53:48 UTC 2026","","test_swag_labs","",""
+"","58","test_get_post_by_id_status_codes","tests.api","Thu May 28 12:53:43 UTC 2026","passed","Thu May 28 12:53:43 UTC 2026","","test_posts","",""
+"","252","test_add_to_cart_and_verify_state[chromium]","tests.ui","Thu May 28 12:53:47 UTC 2026","passed","Thu May 28 12:53:47 UTC 2026","","test_swag_labs","",""
+"","75","test_create_post_echoes_payload_and_generates_id","tests.api","Thu May 28 12:53:43 UTC 2026","passed","Thu May 28 12:53:43 UTC 2026","","test_posts","",""
+"","76","test_update_and_delete_post","tests.api","Thu May 28 12:53:43 UTC 2026","passed","Thu May 28 12:53:43 UTC 2026","","test_posts","",""
+"
+    Happy path tests for login page.
+    ","733","test_login_happy_path[chromium]","tests.ui","Thu May 28 12:53:45 UTC 2026","passed","Thu May 28 12:53:46 UTC 2026","","test_swag_labs","",""
+"
+    End to end tests for checkout page.
+    ","446","test_end_to_end_checkout[chromium]","tests.ui","Thu May 28 12:53:47 UTC 2026","passed","Thu May 28 12:53:47 UTC 2026","","test_swag_labs","",""
+"
+    Invalid credentials tests for login page.
+    ","671","test_login_invalid_credentials[chromium]","tests.ui","Thu May 28 12:53:45 UTC 2026","passed","Thu May 28 12:53:46 UTC 2026","","test_swag_labs","",""
+"","60","test_get_posts_returns_list_with_expected_schema","tests.api","Thu May 28 12:53:43 UTC 2026","passed","Thu May 28 12:53:43 UTC 2026","","test_posts","",""
+"","249","test_cart_badge_updates_when_items_are_added_and_removed[chromium]","tests.ui","Thu May 28 12:53:48 UTC 2026","passed","Thu May 28 12:53:49 UTC 2026","","test_swag_labs","",""
