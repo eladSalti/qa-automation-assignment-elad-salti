@@ -1,4 +1,12 @@
-# Python Test Automation Framework
+# 🧪 qa-automation-assignment-elad-salti
+
+[![Playwright Tests](https://github.com/eladSalti/qa-automation-assignment-elad-salti/actions/workflows/tests.yml/badge.svg)](https://github.com/eladSalti/qa-automation-assignment-elad-salti/actions)
+
+### 📊 Live Test Report
+You can view the interactive Allure test report, complete with execution history and failure screenshots, here:
+👉 **[View Live Allure Report](https://eladSalti.github.io/qa-automation-assignment-elad-salti/)**
+
+---
 
 Production-grade sample automation framework for UI and API testing.
 
