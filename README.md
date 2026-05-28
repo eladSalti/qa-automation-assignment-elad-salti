@@ -19,14 +19,27 @@ Production-grade sample automation framework for UI and API testing.
 - Allure for test reporting
 - `python-dotenv` for environment configuration
 
-## Setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-playwright install --with-deps
-```
+### Setup
+1. **Create and activate a virtual environment:**
+   * **macOS / Linux:**
+     ```bash
+     python3 -m venv .venv
+     source .venv/bin/activate
+     ```
+   * **Windows:**
+     ```powershell
+     python -m venv .venv
+     .venv\Scripts\activate
+     ```
+2. **Install dependencies:**
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+3. **Install Playwright browsers and dependencies:**
+   ```bash
+   playwright install --with-deps
+   ```
 
 ## Configuration
 
