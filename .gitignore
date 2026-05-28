@@ -1,0 +1,33 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Test reports and Playwright artifacts
+report.html
+test-results/
+allure-results/
+allure-report/
+allure-history/
+playwright-report/
+traces/
+
+# IDE and editor files
+.idea/
+.vscode/
+.DS_Store
