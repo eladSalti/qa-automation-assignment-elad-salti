@@ -36,7 +36,6 @@ jobs:
         run: playwright install --with-deps
 
       - name: Run tests
-        continue-on-error: true
         run: >
           pytest -n 2
           --screenshot=only-on-failure
