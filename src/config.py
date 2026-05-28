@@ -43,7 +43,7 @@ def get_settings() -> Settings:
         api_timeout_seconds=_get_float("API_TIMEOUT_SECONDS", 10.0),
         swag_labs_standard_username=os.getenv(
             "SWAG_LABS_STANDARD_USERNAME",
-            "standard_user111111111",
+            "standard_user",
         ),
         swag_labs_password=os.getenv("SWAG_LABS_PASSWORD", "secret_sauce"),
     )
