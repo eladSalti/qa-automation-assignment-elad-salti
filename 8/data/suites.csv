@@ -1,0 +1,17 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+    End to end tests for checkout page.
+    ","429","test_end_to_end_checkout[chromium]","tests.ui","Thu May 28 13:05:50 UTC 2026","passed","Thu May 28 13:05:51 UTC 2026","","test_swag_labs","",""
+"
+    Happy path tests for login page.
+    ","825","test_login_happy_path[chromium]","tests.ui","Thu May 28 13:05:49 UTC 2026","passed","Thu May 28 13:05:50 UTC 2026","","test_swag_labs","",""
+"","304","test_add_to_cart_and_verify_state[chromium]","tests.ui","Thu May 28 13:05:51 UTC 2026","passed","Thu May 28 13:05:51 UTC 2026","","test_swag_labs","",""
+"
+    Invalid credentials tests for login page.
+    ","754","test_login_invalid_credentials[chromium]","tests.ui","Thu May 28 13:05:49 UTC 2026","passed","Thu May 28 13:05:49 UTC 2026","","test_swag_labs","",""
+"","59","test_sort_products_by_price_low_to_high[chromium]","tests.ui","Thu May 28 13:05:52 UTC 2026","passed","Thu May 28 13:05:52 UTC 2026","","test_swag_labs","",""
+"","578","test_get_post_by_id_status_codes","tests.api","Thu May 28 13:05:47 UTC 2026","passed","Thu May 28 13:05:47 UTC 2026","","test_posts","",""
+"","633","test_update_and_delete_post","tests.api","Thu May 28 13:05:47 UTC 2026","passed","Thu May 28 13:05:47 UTC 2026","","test_posts","",""
+"","171","test_create_post_echoes_payload_and_generates_id","tests.api","Thu May 28 13:05:47 UTC 2026","passed","Thu May 28 13:05:47 UTC 2026","","test_posts","",""
+"","339","test_cart_badge_updates_when_items_are_added_and_removed[chromium]","tests.ui","Thu May 28 13:05:52 UTC 2026","passed","Thu May 28 13:05:52 UTC 2026","","test_swag_labs","",""
+"","169","test_get_posts_returns_list_with_expected_schema","tests.api","Thu May 28 13:05:47 UTC 2026","passed","Thu May 28 13:05:47 UTC 2026","","test_posts","",""
