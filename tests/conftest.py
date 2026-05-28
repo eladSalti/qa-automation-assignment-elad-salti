@@ -29,7 +29,12 @@ def browser_context_args(
 
 
 @pytest.fixture
-def login_page(page: Page, settings: Settings) -> LoginPage:
+def login_page(
+    page: Page,
+    settings: Settings,
+    request: pytest.FixtureRequest,
+) -> LoginPage:
+    _register_playwright_artifacts(page, request)
     return LoginPage(
         page=page,
         base_url=settings.ui_base_url,
@@ -68,18 +73,33 @@ def pytest_runtest_makereport(item: pytest.Item, call: pytest.CallInfo[Any]):
         return
 
     page = _get_playwright_page(item)
-    if page is None or page.is_closed():
-        return
+    if page is not None and not page.is_closed():
+        _attach_failure_screenshot(page)
+        _attach_page_html(page)
 
-    screenshot = page.screenshot(full_page=True)
-    allure.attach(
-        screenshot,
-        name="failure-screenshot",
-        attachment_type=allure.attachment_type.PNG,
+    _attach_browser_console_logs(item)
+
+
+def _register_playwright_artifacts(
+    page: Page,
+    request: pytest.FixtureRequest,
+) -> None:
+    console_logs: list[str] = []
+    setattr(request.node, "_playwright_page", page)
+    setattr(request.node, "_browser_console_logs", console_logs)
+
+    page.on(
+        "console",
+        lambda message: console_logs.append(f"[{message.type}] {message.text}"),
     )
+    page.on("pageerror", lambda error: console_logs.append(f"[pageerror] {error}"))
 
 
 def _get_playwright_page(item: pytest.Item) -> Page | None:
+    stored_page = getattr(item, "_playwright_page", None)
+    if isinstance(stored_page, Page):
+        return stored_page
+
     page = item.funcargs.get("page")
     if isinstance(page, Page):
         return page
@@ -90,3 +110,30 @@ def _get_playwright_page(item: pytest.Item) -> Page | None:
             return fixture_page
 
     return None
+
+
+def _attach_failure_screenshot(page: Page) -> None:
+    allure.attach(
+        page.screenshot(full_page=True),
+        name="failure-screenshot",
+        attachment_type=allure.attachment_type.PNG,
+    )
+
+
+def _attach_page_html(page: Page) -> None:
+    allure.attach(
+        page.content(),
+        name="page-dom",
+        attachment_type=allure.attachment_type.HTML,
+    )
+
+
+def _attach_browser_console_logs(item: pytest.Item) -> None:
+    console_logs = getattr(item, "_browser_console_logs", [])
+    log_output = "\n".join(console_logs) if console_logs else "No browser console logs captured."
+
+    allure.attach(
+        log_output,
+        name="browser-console-logs",
+        attachment_type=allure.attachment_type.TEXT,
+    )
