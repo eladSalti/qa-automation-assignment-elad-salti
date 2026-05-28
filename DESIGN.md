@@ -41,6 +41,12 @@ Credentials and environment-specific values should come from environment
 variables. Local secrets can be stored in a git-ignored `.env` file, while CI
 should inject them through its secret manager.
 
+Core application values, such as URLs, timeouts, and credentials, are
+externalized through `src/config.py`. Framework execution settings follow native
+pytest tooling conventions: browser selection is centralized in `pytest.ini`
+with `--browser chromium`, while CI parallelism is controlled by `pytest-xdist`
+through the workflow command `pytest -n 2`.
+
 ## Parallel Execution
 
 `pytest-xdist` is used for parallelism. UI tests use the fresh `page` fixture
